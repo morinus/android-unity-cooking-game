@@ -7,6 +7,14 @@ namespace TestAssignment.PLL
         [SerializeField] private PanView[] _paneViews;
 
 
+        public void Init(float cookingTime, float burnoutTime)
+        {
+            foreach (var panView in _paneViews)
+            {
+                panView.Init(cookingTime, burnoutTime);
+            }
+        }
+
         public void PlaceBurger()
         {
             foreach (var panView in _paneViews)
@@ -16,15 +24,6 @@ namespace TestAssignment.PLL
                 {
                     return;
                 }
-            }
-        }
-
-
-        private void Start()
-        {
-            foreach (var panView in _paneViews)
-            {
-                panView.Init(3f, 10f);
             }
         }
     }

@@ -952,6 +952,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ad5938c4dc5f1084ca790f33116ef097, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ovenController: {fileID: 479267303}
+  _cookingTime: 3
+  _burnoutTime: 10
 --- !u!1 &1062725477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +2966,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 353030121}
     m_Modifications:
+    - target: {fileID: 959046581138695451, guid: d999e2d010099a540870306615f40adb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8802975556502390096, guid: d999e2d010099a540870306615f40adb, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
