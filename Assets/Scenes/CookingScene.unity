@@ -705,6 +705,17 @@ Transform:
   m_Father: {fileID: 406660340}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &566585988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 566585988, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
+  m_PrefabInstance: {fileID: 8447860230782078356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d83a5f813ee6414aa714dbf5a8e3071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &629215993 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6516673759473144839, guid: be97ed8d4da57e84abb6574dbfd37128, type: 3}
@@ -953,8 +964,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ovenController: {fileID: 479267303}
+  _coinsView: {fileID: 566585988}
+  _gameTimeView: {fileID: 8447860230782078357}
   _cookingTime: 3
   _burnoutTime: 10
+  _timeToCompleteLevel: 60
 --- !u!1 &1062725477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2837,38 +2851,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 194382912}
     m_Modifications:
-    - target: {fileID: 8447860230807428113, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447860230807428113, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447860230807428113, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447860230807428113, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447860231211498455, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447860231211498455, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447860231211498455, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8447860231211498455, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8447860231537772624, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2959,6 +2941,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
+--- !u!114 &8447860230782078357 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7972251579463597162, guid: 7e14ba068fb9ee04b93956e95ce05501, type: 3}
+  m_PrefabInstance: {fileID: 8447860230782078356}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32bdd0b6507eb934aaba636e302764b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8802975556931550823
 PrefabInstance:
   m_ObjectHideFlags: 0

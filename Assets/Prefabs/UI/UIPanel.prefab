@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8447860230807428113}
   - component: {fileID: 8447860230807428115}
   - component: {fileID: 8447860230807428114}
+  - component: {fileID: 566585988}
   m_Layer: 5
   m_Name: Coins
   m_TagString: Untagged
@@ -76,6 +77,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &566585988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8447860230807428112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d83a5f813ee6414aa714dbf5a8e3071, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _coinsText: {fileID: 8447860231233287731}
 --- !u!1 &8447860231211498454
 GameObject:
   m_ObjectHideFlags: 0
@@ -87,6 +101,7 @@ GameObject:
   - component: {fileID: 8447860231211498455}
   - component: {fileID: 8447860231211498449}
   - component: {fileID: 8447860231211498448}
+  - component: {fileID: 7972251579463597162}
   m_Layer: 5
   m_Name: Clock
   m_TagString: Untagged
@@ -152,6 +167,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7972251579463597162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8447860231211498454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32bdd0b6507eb934aaba636e302764b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameTimeText: {fileID: 8447860231806553289}
 --- !u!1 &8447860231233287729
 GameObject:
   m_ObjectHideFlags: 0

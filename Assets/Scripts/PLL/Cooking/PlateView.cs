@@ -32,9 +32,9 @@ namespace TestAssignment.PLL
                 case IngredientType.Burger:
                     return _burgerIngredients[0].activeSelf && !_burgerIngredients[1].activeSelf;
                 case IngredientType.Tomato:
-                    return _burgerIngredients[0].activeSelf && _burgerIngredients[1].activeSelf && !_burgerIngredients[2].activeSelf;
+                    return _burgerIngredients[0].activeSelf && _burgerIngredients[1].activeSelf && !_burgerIngredients[2].activeSelf && !_burgerIngredients[3].activeSelf;
                 case IngredientType.Salad:
-                    return _burgerIngredients[0].activeSelf && _burgerIngredients[1].activeSelf && !_burgerIngredients[3].activeSelf;
+                    return _burgerIngredients[0].activeSelf && _burgerIngredients[1].activeSelf && !_burgerIngredients[3].activeSelf && !_burgerIngredients[2].activeSelf;
                 default:
                     return false;
             }
