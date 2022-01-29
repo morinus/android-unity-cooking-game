@@ -1,9 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TestAssignment.PLL
+namespace TestAssignment
 {
-    public class PanView : MonoBehaviour
+    public class PanController : MonoBehaviour
     {
         [SerializeField] private GameObject[] _burgerStages;
         [SerializeField] private Image _greenTimerImage;
@@ -23,7 +23,7 @@ namespace TestAssignment.PLL
         }
 
         /// <summary>
-        /// Returns true if burger has been successfully placed on the oven
+        /// Returns true if burger has been successfully placed on the pan
         /// </summary>
         public bool PlaceBurger()
         {
@@ -42,16 +42,7 @@ namespace TestAssignment.PLL
 
         public void RemoveBurger()
         {
-            foreach (var burgerStage in _burgerStages)
-            {
-                burgerStage.SetActive(false);
-            }
-
-            _hasBurger = false;
-            _hasBurnout = false;
-            _burgerFinishedCooking = false;
-            _timeElapsed = 0f;
-            _redTimerImage.gameObject.SetActive(false);
+            ResetPan();
         }
 
         private void StartGreenTimer()
@@ -67,6 +58,38 @@ namespace TestAssignment.PLL
             _redTimerImage.fillAmount = 0f;
         }
 
+        private void StartOvercookingBurger()
+        {
+            StartRedTimer();
+
+            _burgerFinishedCooking = true;
+            _timeElapsed = 0f;
+            _burgerStages[1].SetActive(true);
+        }
+
+        private void BurnoutBurger()
+        {
+            _burgerStages[1].SetActive(false);
+            _burgerStages[2].SetActive(true);
+            _redTimerImage.gameObject.SetActive(false);
+            _hasBurnout = true;
+        }
+
+        private void ResetPan()
+        {
+            foreach (var burgerStage in _burgerStages)
+            {
+                burgerStage.SetActive(false);
+            }
+
+            _hasBurger = false;
+            _hasBurnout = false;
+            _burgerFinishedCooking = false;
+            _timeElapsed = 0f;
+            _redTimerImage.gameObject.SetActive(false);
+            _greenTimerImage.gameObject.SetActive(false);
+        }
+
         private void Update()
         {
             if (_hasBurger && !_burgerFinishedCooking)
@@ -78,26 +101,20 @@ namespace TestAssignment.PLL
                 var hasFinishedCooking = _timeElapsed >= _cookingTime;
                 if (hasFinishedCooking)
                 {
-                    StartRedTimer();
-
-                    _burgerFinishedCooking = true;
-                    _timeElapsed = 0f;
-                    _burgerStages[1].SetActive(true);
+                    StartOvercookingBurger();
                 }
             }
 
             if (_hasBurger && _burgerFinishedCooking && !_hasBurnout)
             {
                 _timeElapsed += Time.deltaTime;
+
                 _redTimerImage.fillAmount = _timeElapsed / _burnoutTime;
 
                 var hasBurnedOut = _timeElapsed >= _burnoutTime;
                 if (hasBurnedOut)
                 {
-                    _burgerStages[1].SetActive(false);
-                    _burgerStages[2].SetActive(true);
-                    _redTimerImage.gameObject.SetActive(false);
-                    _hasBurnout = true;
+                    BurnoutBurger();
                 }
             }
         }

@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace TestAssignment.PLL
+namespace TestAssignment
 {
     public class CoinsView : MonoBehaviour
     {

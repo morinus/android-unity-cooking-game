@@ -1,25 +1,25 @@
 using UnityEngine;
 
-namespace TestAssignment.PLL
+namespace TestAssignment
 {
     public class OvenController : MonoBehaviour
     {
-        [SerializeField] private PanView[] _paneViews;
+        [SerializeField] private PanController[] _panControllers;
 
 
         public void Init(float cookingTime, float burnoutTime)
         {
-            foreach (var panView in _paneViews)
+            foreach (var panController in _panControllers)
             {
-                panView.Init(cookingTime, burnoutTime);
+                panController.Init(cookingTime, burnoutTime);
             }
         }
 
         public void PlaceBurger()
         {
-            foreach (var panView in _paneViews)
+            foreach (var panController in _panControllers)
             {
-                var hasPlacedBurger = panView.PlaceBurger();
+                var hasPlacedBurger = panController.PlaceBurger();
                 if (hasPlacedBurger)
                 {
                     return;

@@ -1,18 +1,16 @@
-using TestAssignment.Model;
 using UnityEngine;
 
-namespace TestAssignment.PLL
+namespace TestAssignment
 {
     public class BurgerBuildingController : MonoBehaviour
     {
-        [SerializeField] private PlateView[] _plateViews;
-
+        [SerializeField] private PlateController[] _plateControllers;
 
         public void PlaceIngredient(int ingredientType)
         {
-            foreach (var plateView in _plateViews)
+            foreach (var plateController in _plateControllers)
             {
-                var hasPutIngredientToPlate = plateView.PlaceIngredient((IngredientType)ingredientType);
+                var hasPutIngredientToPlate = plateController.PlaceIngredient((IngredientType)ingredientType);
                 if (hasPutIngredientToPlate)
                 {
                     return;

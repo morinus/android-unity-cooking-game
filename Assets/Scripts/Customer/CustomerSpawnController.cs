@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace TestAssignment.PLL
+namespace TestAssignment
 {
     public class CustomerSpawnController : MonoBehaviour
     {

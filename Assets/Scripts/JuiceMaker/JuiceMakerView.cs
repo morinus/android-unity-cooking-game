@@ -1,23 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace TestAssignment.PLL
+namespace TestAssignment
 {
     public class JuiceMakerView : MonoBehaviour
     {
         [SerializeField] private GameObject _juiceGlass;
         [SerializeField] private Image _timerImage;
-
-
-        private void Start()
-        {
-            InitializeGlass();
-        }
-
-        private void InitializeGlass()
-        {
-            SetGlassVisible(false);
-        }
 
 
         public void SetGlassVisible(bool isVisible)

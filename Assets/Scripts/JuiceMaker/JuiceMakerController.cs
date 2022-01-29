@@ -1,17 +1,40 @@
 using UnityEngine;
 
-
-namespace TestAssignment.PLL
+namespace TestAssignment
 {
     public class JuiceMakerController : MonoBehaviour
     {
         [SerializeField] private JuiceMakerView _juiceMakerView;
-        [SerializeField] private float _timeToRefillJuiceGlass;
 
         private bool _isJuiceGlassAvailable = false;
         private bool _isFillingJuiceGlass = false;
+        private float _timeToFillJuiceGlass = 0f;
         private float _timeElapsed = 0f;
 
+
+        public void Init(float timeToFillJuiceGlass)
+        {
+            _timeToFillJuiceGlass = timeToFillJuiceGlass;
+        }
+
+        public void FillJuiceGlass()
+        {
+            if (!_isJuiceGlassAvailable)
+            {
+                StartFillingJuiceGlass();
+            }
+        }
+
+        public void ServeJuiceGlass()
+        {
+            if (_isJuiceGlassAvailable)
+            {
+                _isJuiceGlassAvailable = false;
+                _juiceMakerView.SetGlassVisible(false);
+            }
+
+            // Serve Juice Glass
+        }
 
         private void StartFillingJuiceGlass()
         {
@@ -37,33 +60,13 @@ namespace TestAssignment.PLL
             if (_isFillingJuiceGlass)
             {
                 _timeElapsed += Time.deltaTime;
-                _juiceMakerView.SetTimerFill(_timeElapsed / _timeToRefillJuiceGlass);
+                _juiceMakerView.SetTimerFill(_timeElapsed / _timeToFillJuiceGlass);
 
-                if (_timeElapsed >= _timeToRefillJuiceGlass)
+                if (_timeElapsed >= _timeToFillJuiceGlass)
                 {
                     OnFinishedFillingJuiceGlass();
                 }
             }
-        }
-
-
-        public void FillJuiceGlass()
-        {
-            if (!_isJuiceGlassAvailable)
-            {
-                StartFillingJuiceGlass();
-            }
-        }
-
-        public void ServeJuiceGlass()
-        {
-            if (_isJuiceGlassAvailable)
-            {
-                _isJuiceGlassAvailable = false;
-                _juiceMakerView.SetGlassVisible(false);
-            }
-
-            // Serve Juice Glass
         }
     }
 }
