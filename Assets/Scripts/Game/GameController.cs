@@ -4,21 +4,17 @@ namespace TestAssignment
 {
     public class GameController : MonoBehaviour
     {
+        [Header("Controllers")]
         [SerializeField] private JuiceMakerController _juiceMakerController;
         [SerializeField] private OvenController _ovenController;
         [SerializeField] private CustomerSpawnController _customerSpawnController;
 
+        [Header("Views")]
         [SerializeField] private CoinsView _coinsView;
         [SerializeField] private GameTimeView _gameTimeView;
 
-        [SerializeField] private float _timetoFillJuiceGlass = 3f;
-        [SerializeField] private float _cookingTime = 3f;
-        [SerializeField] private float _burnoutTime = 10f;
-        [SerializeField] private float _timeBetweenCustomerSpawns = 3f;
-        [SerializeField] private int _timeToCompleteLevel = 60;
-
-        public int MaxNumberOfOrders = 2;
-        public GameObject[] OrderPrefabs;
+        [Header("Level Data")]
+        [SerializeField] private LevelScriptable _levelData;
 
         private int _currentScore = 0;
         private float _timeElapsed = 0f;
@@ -51,9 +47,9 @@ namespace TestAssignment
 
             _timeElapsed += Time.deltaTime;
 
-            _gameTimeView.UpdateTimeText(_timeToCompleteLevel - (int)_timeElapsed);
+            _gameTimeView.UpdateTimeText(_levelData.TimeDuration - (int)_timeElapsed);
 
-            if (_timeElapsed >= _timeToCompleteLevel)
+            if (_timeElapsed >= _levelData.TimeDuration)
             {
                 GameOver();
             }
@@ -66,9 +62,9 @@ namespace TestAssignment
             _gameController = this;
             _isRunning = true;
 
-            _juiceMakerController.Init(_timetoFillJuiceGlass);
-            _ovenController.Init(_cookingTime, _burnoutTime);
-            _customerSpawnController.Init(_timeBetweenCustomerSpawns);
+            _juiceMakerController.Init(_levelData.TimeToFillJuiceGlass);
+            _ovenController.Init(_levelData.CookingTime, _levelData.BurnoutTime);
+            _customerSpawnController.Init(_levelData.TimeBetweenCustomerSpawns);
         }
 
         private void GameOver()

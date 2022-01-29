@@ -13,6 +13,7 @@ namespace TestAssignment
         private Dictionary<OrderType, GameObject> _ordersDictionary;
 
         private float _timeElapsed = 0f;
+        private int _maxNumberOfOrders = 2;
 
         private void OnEnable()
         {
@@ -51,16 +52,16 @@ namespace TestAssignment
 
         private void CreateRandomOrders()
         {
-            var numberOfOrders = Random.Range(0, GameController.Singleton.MaxNumberOfOrders) + 1;
+            //var numberOfOrders = Random.Range(0, _maxNumberOfOrders) + 1;
 
-            for (int i = 0; i < numberOfOrders; ++i)
-            {
-                var orderType = (OrderType)(Random.Range(0, GameController.Singleton.OrderPrefabs.Length));
-                var orderPrefab = GameController.Singleton.OrderPrefabs[(int)orderType];
-                var orderObject = Instantiate(orderPrefab, _orderTransform);
+            //for (int i = 0; i < numberOfOrders; ++i)
+            //{
+            //    var orderType = (OrderType)(Random.Range(0, GameController.Singleton.OrderPrefabs.Length));
+            //    var orderPrefab = GameController.Singleton.OrderPrefabs[(int)orderType];
+            //    var orderObject = Instantiate(orderPrefab, _orderTransform);
 
-                _ordersDictionary.Add(orderType, orderObject);
-            }
+            //    _ordersDictionary.Add(orderType, orderObject);
+            //}
         }
     }
 }

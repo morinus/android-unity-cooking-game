@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1600539e5940e84499f9b48d0cb02cb, type: 3}
+  m_Name: LevelData
+  m_EditorClassIdentifier: 
+  TimeToFillJuiceGlass: 3
+  CookingTime: 3
+  BurnoutTime: 10
+  TimeBetweenCustomerSpawns: 3
+  TimeToServeCustomer: 30
+  TimeDuration: 60
+  Recipes:
+  - {fileID: 11400000, guid: 0a3f095485a85e84795d62567480fb7a, type: 2}
+  - {fileID: 11400000, guid: 026c534c99328a94ebc3f7bbeef7eff9, type: 2}
+  - {fileID: 11400000, guid: aaf650314b93e3c4dafccdc15c630bc3, type: 2}
+  - {fileID: 11400000, guid: 41dfd712b2a74104db5dc4dd33e51b1e, type: 2}

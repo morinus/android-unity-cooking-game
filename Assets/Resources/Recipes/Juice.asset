@@ -1,0 +1,16 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2c3a3cb9de5b5b4291ad6ea05f5de52, type: 3}
+  m_Name: Juice
+  m_EditorClassIdentifier: 
+  RecipePrefab: {fileID: 5062709279311711325, guid: a9dc7cc90e0470543b7623502ce98842, type: 3}
+  Ingredients: 04000000
