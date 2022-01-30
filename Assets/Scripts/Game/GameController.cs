@@ -27,15 +27,27 @@ namespace TestAssignment
 
         private static GameController _gameController;
 
-        public void IncreasePlayerScore(int value)
+        public void IncreasePlayerScore()
         {
-            _currentScore += value;
+            _currentScore += _levelData.EarningPerFinishedOrder;
             _coinsView.UpdateCoinsText(_currentScore);
         }
 
         private void Start()
         {
             Init();
+        }
+
+        private void Init()
+        {
+            _currentScore = 0;
+            _timeElapsed = 0f;
+            _gameController = this;
+            _isRunning = true;
+
+            _juiceMakerController.Init(_levelData.TimeToFillJuiceGlass);
+            _ovenController.Init(_levelData.CookingTime, _levelData.BurnoutTime);
+            _customerSpawnController.Init(_levelData.TimeBetweenCustomerSpawns);
         }
 
         private void Update()
@@ -53,18 +65,6 @@ namespace TestAssignment
             {
                 GameOver();
             }
-        }
-
-        private void Init()
-        {
-            _currentScore = 0;
-            _timeElapsed = 0f;
-            _gameController = this;
-            _isRunning = true;
-
-            _juiceMakerController.Init(_levelData.TimeToFillJuiceGlass);
-            _ovenController.Init(_levelData.CookingTime, _levelData.BurnoutTime);
-            _customerSpawnController.Init(_levelData.TimeBetweenCustomerSpawns);
         }
 
         private void GameOver()

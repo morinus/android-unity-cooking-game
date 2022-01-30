@@ -18,6 +18,10 @@ namespace TestAssignment
 
         [Header("Level Settings")]
         public int TimeDuration;
+        public int ScoreRequiredToFinishLevel;
+
+        [Header("Economy")]
+        public int EarningPerFinishedOrder;
 
         [Header("Available Recipes")]
         public RecipeScriptable[] Recipes;

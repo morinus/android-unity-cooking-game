@@ -5,6 +5,8 @@ namespace TestAssignment
 {
     public class PanController : MonoBehaviour
     {
+        [SerializeField] private BurgerBuildingController _burgerBuildingController;
+
         [SerializeField] private GameObject[] _burgerStages;
         [SerializeField] private Image _greenTimerImage;
         [SerializeField] private Image _redTimerImage;
@@ -43,6 +45,15 @@ namespace TestAssignment
         public void RemoveBurger()
         {
             ResetPan();
+        }
+
+        public void PlaceBurgerOntoBun()
+        {
+            var hasPlacedBurger = _burgerBuildingController.PlaceBurger();
+            if (hasPlacedBurger)
+            {
+                RemoveBurger();
+            }
         }
 
         private void StartGreenTimer()

@@ -18,6 +18,8 @@ MonoBehaviour:
   TimeBetweenCustomerSpawns: 3
   TimeToServeCustomer: 30
   TimeDuration: 60
+  ScoreRequiredToFinishLevel: 40
+  EarningPerFinishedOrder: 10
   Recipes:
   - {fileID: 11400000, guid: 0a3f095485a85e84795d62567480fb7a, type: 2}
   - {fileID: 11400000, guid: 026c534c99328a94ebc3f7bbeef7eff9, type: 2}

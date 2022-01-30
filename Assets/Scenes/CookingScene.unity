@@ -572,6 +572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 235adf8f9e19a124dbb5a10e51157f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _burgerBuildingController: {fileID: 0}
   _panControllers:
   - {fileID: 5858962288092869191}
   - {fileID: 5858962288092869190}
@@ -1305,17 +1306,7 @@ MonoBehaviour:
   _customerSpawnController: {fileID: 1854657540}
   _coinsView: {fileID: 566585988}
   _gameTimeView: {fileID: 8447860230782078357}
-  _timetoFillJuiceGlass: 3
-  _cookingTime: 3
-  _burnoutTime: 10
-  _timeBetweenCustomerSpawns: 3
-  _timeToCompleteLevel: 60
-  MaxNumberOfOrders: 2
-  OrderPrefabs:
-  - {fileID: 5700674705460984866, guid: 8d0ad299301c7e541a6947d46ada393b, type: 3}
-  - {fileID: 5700674705460984866, guid: 4187d572e5a9f1f469514d902cfabe44, type: 3}
-  - {fileID: 5700674705460984866, guid: 37340aee768fc674dbba4634512b37e4, type: 3}
-  - {fileID: 5062709279311711325, guid: a9dc7cc90e0470543b7623502ce98842, type: 3}
+  _levelData: {fileID: 11400000, guid: 6cc78799393b5524db881ee53430a154, type: 2}
 --- !u!1 &1062725477
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,10 +2697,46 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869179, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869179, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869179, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 5858962288092869191}
+    - target: {fileID: 5858962288092869179, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869179, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlaceBurgerOntoBun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869179, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: TestAssignment.PanController, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869179, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869179, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869189, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: _burgerBuildingController
+      value: 
+      objectReference: {fileID: 1008112255}
+    - target: {fileID: 5858962288092869190, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: _burgerBuildingController
+      value: 
+      objectReference: {fileID: 1008112255}
+    - target: {fileID: 5858962288092869191, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: _burgerBuildingController
       value: 
       objectReference: {fileID: 1008112255}
     - target: {fileID: 5858962288092869202, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
@@ -2742,7 +2769,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869203, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869203, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2753,16 +2780,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 5858962288092869189}
     - target: {fileID: 5858962288092869203, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869203, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: RemoveBurger
+      value: PlaceBurgerOntoBun
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869203, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TestAssignment.PLL.PanView, Assembly-CSharp
+      value: TestAssignment.PanController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869203, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869203, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869204, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -2794,31 +2829,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1008112255}
+      objectReference: {fileID: 5858962288092869190}
     - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1008112255}
     - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: PlaceIngredient
+      value: PlaceBurgerOntoBun
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TestAssignment.PLL.BurgerBuildingController, Assembly-CSharp
+      value: TestAssignment.PanController, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5858962288092869205, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5858962288092869206, guid: 19530e7c6eec9b54cb9081120b29d9a4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size

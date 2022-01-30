@@ -4,6 +4,7 @@ namespace TestAssignment
 {
     public class OvenController : MonoBehaviour
     {
+        [SerializeField] private BurgerBuildingController _burgerBuildingController;
         [SerializeField] private PanController[] _panControllers;
 
 

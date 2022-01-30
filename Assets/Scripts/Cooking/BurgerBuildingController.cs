@@ -17,5 +17,19 @@ namespace TestAssignment
                 }
             }
         }
+
+        public bool PlaceBurger()
+        {
+            foreach (var plateController in _plateControllers)
+            {
+                var hasPutIngredientToPlate = plateController.PlaceIngredient(IngredientType.Burger);
+                if (hasPutIngredientToPlate)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
     }
 }
