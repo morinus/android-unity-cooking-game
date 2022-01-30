@@ -22,6 +22,8 @@ namespace TestAssignment
             if (_timeElapsed >= _timeBetweenSpawns)
             {
                 SpawnCustomer();
+
+                _timeElapsed = 0f;
             }
         }
 
@@ -32,8 +34,6 @@ namespace TestAssignment
             var hasAvailableCustomer = availableCustomers.Count > 0;
             if (hasAvailableCustomer)
             {
-                _timeElapsed = 0f;
-
                 var randomCustomer = availableCustomers[Random.Range(0, availableCustomers.Count)];
                 randomCustomer.SetActive(true);
             }

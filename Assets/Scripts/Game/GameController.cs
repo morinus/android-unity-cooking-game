@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace TestAssignment
 {
@@ -15,6 +16,12 @@ namespace TestAssignment
 
         [Header("Level Data")]
         [SerializeField] private LevelScriptable _levelData;
+
+        [Header("Canvases")]
+        [SerializeField] private GameObject _endGameWindow;
+        [SerializeField] private GameObject _goalAchieved;
+        [SerializeField] private GameObject _goalFailed;
+
 
         private int _currentScore = 0;
         private float _timeElapsed = 0f;
@@ -40,6 +47,13 @@ namespace TestAssignment
             CheckForLevelCompleted();
         }
 
+        public void RestartGame()
+        {
+            SceneManager.LoadScene(0);
+
+            Init();
+        }
+
         private void Start()
         {
             Init();
@@ -47,6 +61,8 @@ namespace TestAssignment
 
         private void Init()
         {
+            Time.timeScale = 1f;
+
             _currentScore = 0;
             _timeElapsed = 0f;
             _gameController = this;
@@ -97,11 +113,17 @@ namespace TestAssignment
 
         private void ShowGameOverWindow()
         {
+            _endGameWindow.SetActive(true);
+            _goalFailed.SetActive(true);
+
             Debug.Log("Game Over! Time is up!");
         }
 
         private void ShowLevelCompletedWindow()
         {
+            _endGameWindow.SetActive(true);
+            _goalAchieved.SetActive(true);
+
             Debug.Log("Level Compeleted!");
         }
     }

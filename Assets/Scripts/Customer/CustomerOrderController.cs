@@ -90,6 +90,7 @@ namespace TestAssignment
             }
 
             _ordersCompleted = 0;
+            _timeElapsed = 0f;
             _totalOrders = maxNumberOfOrders;
         }
 
