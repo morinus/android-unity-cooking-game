@@ -2,10 +2,11 @@ namespace TestAssignment
 {
     public enum OrderType
     {
-        NormalBurger = 0,
-        TomatoBurger = 1,
-        SaladBurger = 2,
-        Juice = 3
+        Invalid = 0,
+        NormalBurger = 1,
+        TomatoBurger = 2,
+        SaladBurger = 3,
+        Juice = 4
     }
 }
 

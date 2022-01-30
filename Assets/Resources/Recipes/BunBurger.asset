@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2c3a3cb9de5b5b4291ad6ea05f5de52, type: 3}
   m_Name: BunBurger
   m_EditorClassIdentifier: 
+  OrderType: 1
   RecipePrefab: {fileID: 5700674705460984866, guid: 8d0ad299301c7e541a6947d46ada393b, type: 3}
   Ingredients: 0000000001000000

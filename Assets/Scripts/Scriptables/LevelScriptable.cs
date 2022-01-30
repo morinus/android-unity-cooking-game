@@ -15,6 +15,7 @@ namespace TestAssignment
         [Header("Customer Settings")]
         public float TimeBetweenCustomerSpawns;
         public float TimeToServeCustomer;
+        public int MaxNumberOfOrders;
 
         [Header("Level Settings")]
         public int TimeDuration;

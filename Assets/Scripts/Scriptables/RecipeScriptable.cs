@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TestAssignment
@@ -5,10 +6,9 @@ namespace TestAssignment
     [CreateAssetMenu(fileName = "RecipeData", menuName = "Scriptables/RecipeData")]
     public class RecipeScriptable : ScriptableObject
     {
-        [Header("RecipePrefab")]
+        [Header("Recipe Settings")]
+        public OrderType OrderType;
         public GameObject RecipePrefab;
-
-        [Header("Ingredients")]
-        public IngredientType[] Ingredients;
+        public List<IngredientType> Ingredients;
     }
 }

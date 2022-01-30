@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace TestAssignment
@@ -5,6 +6,7 @@ namespace TestAssignment
     public class JuiceMakerController : MonoBehaviour
     {
         [SerializeField] private JuiceMakerView _juiceMakerView;
+        [SerializeField] private ServingCustomersController _servingCustomerController;
 
         private bool _isJuiceGlassAvailable = false;
         private bool _isFillingJuiceGlass = false;
@@ -29,11 +31,16 @@ namespace TestAssignment
         {
             if (_isJuiceGlassAvailable)
             {
-                _isJuiceGlassAvailable = false;
-                _juiceMakerView.SetGlassVisible(false);
-            }
+                var ingredients = new List<IngredientType>();
+                ingredients.Add(IngredientType.Juice);
 
-            // Serve Juice Glass
+                var hasServedCustomer = _servingCustomerController.ServeCustomer(ingredients);
+                if (hasServedCustomer)
+                {
+                    _isJuiceGlassAvailable = false;
+                    _juiceMakerView.SetGlassVisible(false);
+                }
+            }
         }
 
         private void StartFillingJuiceGlass()

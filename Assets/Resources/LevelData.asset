@@ -17,6 +17,7 @@ MonoBehaviour:
   BurnoutTime: 10
   TimeBetweenCustomerSpawns: 3
   TimeToServeCustomer: 30
+  MaxNumberOfOrders: 2
   TimeDuration: 60
   ScoreRequiredToFinishLevel: 40
   EarningPerFinishedOrder: 10

@@ -25,12 +25,19 @@ namespace TestAssignment
             get { return _gameController; }
         }
 
+        public LevelScriptable LevelData
+        {
+            get { return _levelData; }
+        }
+
         private static GameController _gameController;
 
         public void IncreasePlayerScore()
         {
             _currentScore += _levelData.EarningPerFinishedOrder;
             _coinsView.UpdateCoinsText(_currentScore);
+
+            CheckForLevelCompleted();
         }
 
         private void Start()
@@ -69,10 +76,33 @@ namespace TestAssignment
 
         private void GameOver()
         {
+            StopGame();
+            ShowGameOverWindow();
+        }
+
+        private void CheckForLevelCompleted()
+        {
+            if (_currentScore >= LevelData.ScoreRequiredToFinishLevel)
+            {
+                StopGame();
+                ShowLevelCompletedWindow();
+            }
+        }
+
+        private void StopGame()
+        {
             Time.timeScale = 0f;
             _isRunning = false;
+        }
 
+        private void ShowGameOverWindow()
+        {
             Debug.Log("Game Over! Time is up!");
+        }
+
+        private void ShowLevelCompletedWindow()
+        {
+            Debug.Log("Level Compeleted!");
         }
     }
 }

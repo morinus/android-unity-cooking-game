@@ -5,7 +5,8 @@ namespace TestAssignment
 {
     public class PlateController : MonoBehaviour
     {
-        [SerializeField] GameObject[] _burgerIngredientImages;
+        [SerializeField] private ServingCustomersController _serveringCustomersController;
+        [SerializeField] private GameObject[] _burgerIngredientImages;
 
         private List<IngredientType> _burgerIngredients;
 
@@ -27,9 +28,11 @@ namespace TestAssignment
 
         public void ServerBurger()
         {
-            // Server burger to customer
-
-            ResetPlate();
+            var hasServedCustomer = _serveringCustomersController.ServeCustomer(_burgerIngredients);
+            if (hasServedCustomer)
+            {
+                ResetPlate();
+            }
         }
 
         private void Start()
@@ -58,7 +61,7 @@ namespace TestAssignment
                 case IngredientType.Burger:
                     return !_burgerIngredients.Contains(ingredientType) && _burgerIngredients.Contains(IngredientType.Bun);
                 case IngredientType.Tomato:
-                    return !_burgerIngredients.Contains(ingredientType) && hasBunAndBurger;
+                    return !_burgerIngredients.Contains(ingredientType) && hasBunAndBurger && !_burgerIngredients.Contains(IngredientType.Salad);
                 case IngredientType.Salad:
                     return !_burgerIngredients.Contains(ingredientType) && hasBunAndBurger && !_burgerIngredients.Contains(IngredientType.Tomato);
                 default:
