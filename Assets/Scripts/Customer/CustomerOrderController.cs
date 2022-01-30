@@ -22,9 +22,15 @@ namespace TestAssignment
         {
             foreach (var order in _orders)
             {
+                if (order.IsCompleted)
+                {
+                    continue;
+                }
+
                 if (order.OrderType == orderType)
                 {
                     order.OrderGameObject.GetComponent<OrderView>().ActivateCheckmarkObject();
+                    order.IsCompleted = true;
 
                     _ordersCompleted++;
 

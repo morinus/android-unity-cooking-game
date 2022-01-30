@@ -6,11 +6,13 @@ namespace TestAssignment
     {
         public OrderType OrderType;
         public GameObject OrderGameObject;
+        public bool IsCompleted;
 
         public Order(OrderType orderType, GameObject orderGameObject)
         {
             OrderType = orderType;
             OrderGameObject = orderGameObject;
+            IsCompleted = false;
         }
     }
 }
